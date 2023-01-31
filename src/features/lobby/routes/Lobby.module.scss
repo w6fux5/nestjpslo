@@ -1,0 +1,94 @@
+.lobby-container {
+  @include backgroundImg-cover;
+  background-image: url(@/assets/bg_日本版.webp);
+  overflow: scroll;
+  height: 1200px;
+
+  .inner {
+    transform: translateY(-10em);
+    -webkit-transform: translateY(-10em);
+    -moz-transform: translateY(-10em);
+    -ms-transform: translateY(-10em);
+    -o-transform: translateY(-10em);
+
+    .sing-board {
+      width: 100%;
+    }
+
+    .platform-list {
+      transform: translateY(-10em);
+      -webkit-transform: translateY(-10em);
+      -moz-transform: translateY(-10em);
+      -ms-transform: translateY(-10em);
+      -o-transform: translateY(-10em);
+
+      .platform {
+        @include backgroundImg-contain;
+        background-image: url(@/assets/platform.webp);
+        height: 40em;
+        margin-top: -4em;
+        position: relative;
+
+        .setup {
+          @include backgroundImg-100;
+          @include respond(tiny) {
+            top: -0em;
+            left: 2.5em;
+            height: 22%;
+            width: 22%;
+          } // < 340
+
+          background-image: url(@/assets/setup-4.webp);
+          position: absolute;
+          top: 0em;
+          left: 4em;
+          height: 20%;
+          width: 20%;
+        }
+
+        .seat {
+          @include backgroundImg-contain;
+          @include respond(tiny) {
+            height: 14em;
+            width: 14em;
+          } // < 360
+
+          position: absolute;
+          height: 15em;
+          width: 15em;
+          cursor: pointer;
+          clip-path: polygon(50% 0, 80% 21%, 88% 61%, 89% 100%, 40% 98%, 12% 58%, 11% 0);
+          overflow: visible;
+
+          &:hover::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(244, 239, 80, 0.37);
+            height: 65%;
+            width: 59%;
+            top: 0em;
+            left: 1.2em;
+            position: absolute;
+            clip-path: polygon(4% 21%, 50% 0, 86% 17%, 88% 80%, 40% 100%, 5% 83%);
+          }
+
+          .user-box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            .user {
+              @include backgroundImg-contain;
+              background-image: url(@/assets/man.webp);
+              height: 8em;
+              width: 8em;
+              position: absolute;
+              bottom: 2em;
+              right: 1.5em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

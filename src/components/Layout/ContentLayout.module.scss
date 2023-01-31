@@ -1,0 +1,21 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  max-width: 557px;
+  padding: 1rem;
+  position: relative;
+  margin: auto;
+  overflow: scroll;
+
+  .header {
+    height: 75px;
+  }
+
+  .body {
+    flex: 1;
+    padding-top: 1rem;
+  }
+}

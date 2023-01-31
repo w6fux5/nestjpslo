@@ -1,0 +1,26 @@
+.brand-header {
+  height: 100%;
+  position: relative;
+
+  .inner {
+    @include flex-center;
+    background-color: #6f644f;
+    height: 50%;
+    width: 95%;
+    margin: auto;
+
+    .brand-text {
+      color: #f2e9b4;
+      letter-spacing: 2px;
+    }
+
+    &::after {
+      content: '';
+      height: 1px;
+      background-color: #887235;
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+    }
+  }
+}
