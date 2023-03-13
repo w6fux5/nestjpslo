@@ -9,14 +9,17 @@ export default ({ mode }) => {
 
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
+
+  console.log(process.env.VITE_HOST)
+
   return defineConfig({
     plugins: [react()],
     server: {
       host: '0.0.0.0',
       port: (process.env.VITE_PORT as unknown as number) || 3000,
       proxy: {
-        '/online': {
-          target: process.env.VITE_HOST || 'http://220.135.67.240:3032',
+        '/api': {
+          target: process.env.VITE_HOST || 'http://192.168.10.14:5000',
           secure: false,
           changeOrigin: true,
         },

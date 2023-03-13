@@ -2,7 +2,7 @@ import Axios, { AxiosRequestConfig } from 'axios';
 
 import { storage } from '@/utils/storage';
 
-export const API_URL = '/online';
+export const API_URL = '/api';
 export const JWT_SECRET = '123456' as string;
 
 const authRequestInterceptor = (config: AxiosRequestConfig) => {
